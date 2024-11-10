@@ -1,7 +1,10 @@
 #include "datum.h"
 
-  Datum::Datum(int dan, int mjesec, int godina) 
-    : dan(dan), mjesec(mjesec), godina(godina) {}
+  Datum::Datum(int dan, int mjesec, int godina) {
+    setDan(dan);
+    setMjesec(mjesec);
+    setGodina(godina);
+  }
 
   int Datum::getDan() {
     return dan;
@@ -14,14 +17,20 @@
   }
 
   Datum& Datum::setDan(int dan) {
-    this->dan = dan;
+    if (dan < 1 || dan > 31) {
+      this->dan = 1;
+    }
     return *this;
   }
   Datum& Datum::setMjesec(int mjesec) {
-    this->mjesec = mjesec;
+    if (mjesec < 1 || mjesec > 12) {
+      this->mjesec = 1;
+    }
     return *this;
   }
   Datum& Datum::setGodina(int godina) {
-    this->godina = godina;
+    if (godina < 1900 || godina > 2100) {
+      this->godina = 1900;
+    }
     return *this;
   }
