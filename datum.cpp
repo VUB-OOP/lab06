@@ -19,18 +19,24 @@
   Datum& Datum::setDan(int dan) {
     if (dan < 1 || dan > 31) {
       this->dan = 1;
+    } else {
+      this->dan = dan;
     }
     return *this;
   }
   Datum& Datum::setMjesec(int mjesec) {
     if (mjesec < 1 || mjesec > 12) {
       this->mjesec = 1;
+    } else {
+      this->mjesec = mjesec;
     }
     return *this;
   }
   Datum& Datum::setGodina(int godina) {
     if (godina < 1900 || godina > 2100) {
       this->godina = 1900;
+    } else {
+      this->godina = godina;
     }
     return *this;
   }
