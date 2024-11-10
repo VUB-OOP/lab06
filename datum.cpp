@@ -34,3 +34,7 @@
     }
     return *this;
   }
+
+  std::string Datum::toString() {
+    return std::to_string(dan) + "." + std::to_string(mjesec) + "." + std::to_string(godina) + ".";
+  }
