@@ -3,7 +3,7 @@
 
 class Student {
 public:
-  Student(std::string ime, std::string prezime, Datum datumUpisa, Adresa adresaStanovanja);
+  Student(std::string ime, std::string prezime, int brojIndeksa, Datum datumUpisa, Adresa adresaStanovanja);
 
   std::string getIme();
   std::string getPrezime();
@@ -18,6 +18,7 @@ public:
   Student& setAdresaStanovanja(Adresa adresaStanovanja);
 
   std::string toString();
+  void prikaziPodatke();
 
 private:
   std::string ime;

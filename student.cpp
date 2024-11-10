@@ -1,9 +1,11 @@
+#include <iostream>
 #include "student.h"
 
-Student::Student(std::string ime, std::string prezime, Datum datumUpisa, Adresa adresaStanovanja) 
+Student::Student(std::string ime, std::string prezime, int brojIndeksa, Datum datumUpisa, Adresa adresaStanovanja) 
   : datumUpisa(datumUpisa), adresaStanovanja(adresaStanovanja) {
   setIme(ime);
   setPrezime(prezime);
+  setBrojIndeksa(brojIndeksa);
 }
 
 std::string Student::getIme() {
@@ -53,4 +55,11 @@ Student& Student::setAdresaStanovanja(Adresa adresaStanovanja) {
 
 std::string Student::toString() {
   return ime + " " + prezime + " (" + datumUpisa.toString() + ") - " + adresaStanovanja.toString();
+}
+
+void Student::prikaziPodatke() {
+  std::cout << ime << " " << prezime << std::endl;
+  std::cout << "Broj indeksa: " << brojIndeksa << std::endl;
+  std::cout << "Datum upisa: " << datumUpisa.toString() << std::endl;
+  std::cout << "Adresa stanovanja: " << adresaStanovanja.toString() << std::endl;
 }
